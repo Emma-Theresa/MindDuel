@@ -36,13 +36,18 @@ body {
     width: 65.8px;
     height: 100px;
 }
+    #player2 {
+    overflow: hidden;
+}
 
 #player1 {
+    
     left: 100px;
     top: 360px;
 }
 
 #player2 {
+   
     left: 200px;
     top: 260px;
 }
@@ -68,7 +73,7 @@ body {
         left: 100px;
     }
     to {
-        left: 830px; /* Move to the right */
+        left: 860px; /* Move to the right */
     }
 }
 
@@ -80,6 +85,33 @@ body {
         left: 900px; /* Move to the right */
     }
 }
+
+@keyframes combat_green {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-550px, 0, 0);
+    }
+}
+
+@keyframes combat_blue {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-550px, 0, 0);
+    }
+}
+
+.animate_combat_blue {
+    animation: combat_blue 1s steps(6) infinite;
+}
+
+.animate_combat_green {
+    animation: combat_green 1s steps(6) infinite;
+}
+
 
 .animate_player1 {
     animation: move_Character1 4s linear forwards;
