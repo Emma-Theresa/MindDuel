@@ -1,18 +1,18 @@
 :root {
     --pixel-size: 6;
-  }
-
-body{
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to right, #8B3D48,#753D42);
 }
 
-.pixelart{
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48, #753D42);
+}
+
+.pixelart {
     image-rendering: pixelated;
 }
 
-.container{
+.container {
     background-image: url('./assets/image/Reference-Image.png');
     background-repeat: no-repeat;
     margin-top: 7vh;
@@ -22,87 +22,82 @@ body{
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
-    
 }
 
-.grave{
+.grave {
     object-fit: fill;
     margin-top: 155px;
     opacity: .8;
 }
 
-#player1{
+#player1, #player2 {
     position: relative;
-    /* background-color: red; */
     overflow: hidden;
     width: 65.8px;
     height: 100px;
+}
+
+#player1 {
     left: 100px;
     top: 360px;
-    animation: move_Character1 5s linear forwards;
 }
- 
-#player2{
-    position: relative;
-    /* background-color: red; */
-    overflow: hidden;
-    width: 65.8px;
-    height: 100px;
+
+#player2 {
     left: 200px;
     top: 260px;
-    animation: move_Character2 4.5s linear forwards;
-    animation-delay: .2s; 
 }
 
-
-#Character_sprite1{
-
-   position: absolute;
-    height:510px ;
+#Character_sprite1, #Character_sprite2 {
+    position: absolute;
+    height: 510px;
     top: -200px;
     left: -90px;
+}
 
+@keyframes walk_Character {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+@keyframes move_Character1 {
+    from {
+        left: 100px;
+    }
+    to {
+        left: 830px; /* Move to the right */
+    }
+}
+
+@keyframes move_Character2 {
+    from {
+        left: 200px;
+    }
+    to {
+        left: 900px; /* Move to the right */
+    }
+}
+
+.animate_player1 {
+    animation: move_Character1 4s linear forwards;
+}
+
+.animate_player2 {
+    animation: move_Character2 3.7s linear forwards 0.2s;
+}
+
+.animate_run_Character_sprite1 {
     animation: walk_Character 1s steps(6) infinite;
-
-  }
-
-  #Character_sprite2{
-
-    position: absolute;
-     height:510px ;
-     top: -200px;
-     left: -90px;
- 
-     animation: walk_Character 1s steps(6) infinite;
-     animation-delay: .3s; 
- 
-   }
-
-
-
-  @keyframes walk_Character{
-    from{
-        transform: translate3d(0px,0px,0px);
-    }
-    to{
-        transform: translate3d(-515px,0,0);
-    }
 }
 
-@keyframes move_Character1{
-    from {
-        left: 100;
-    }
-    to {
-        left: 720px; /* Move to the right */
-    }
+.animate_run_Character_sprite2 {
+    animation: walk_Character 1s steps(6) infinite;
+    animation-delay: .3s;
 }
 
-@keyframes move_Character2{
-    from {
-        left: 200;
-    }
-    to {
-        left: 800px; /* Move to the right */
-    }
+.hidden {
+    display: none;
 }
