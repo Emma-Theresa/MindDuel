@@ -24,6 +24,26 @@ body {
     overflow: hidden;
 }
 
+.task_container{
+    position: absolute;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    min-width: 86%;
+    max-width: 700px;
+    min-height: 50%;
+    margin-top: 3%;
+    margin-left: 7%;
+    /* background-color: #901639; */
+    background-image: linear-gradient(225deg, #901639 2%, #740b29 41%, #901639 88%);
+
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.task_container:hover {
+    transform: scale(1.05); /* Add this line for scaling effect on hover */
+}
+
 .grave {
     object-fit: fill;
     margin-top: 155px;
