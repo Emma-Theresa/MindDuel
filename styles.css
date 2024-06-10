@@ -106,6 +106,27 @@ body {
     }
 }
 
+/* move left  */
+
+@keyframes move_Character1_l {
+    from {
+        left: 860px;
+    }
+    to {
+        left: 100px;  /* Move to the right */
+    }
+}
+
+@keyframes move_Character2_l {
+    from {
+        
+        left: 900px;
+    }
+    to {
+        left: 200px; /* Move to the right */
+    }
+}
+
 @keyframes combat_green {
     from {
         transform: translate3d(0px, 0px, 0px);
@@ -125,11 +146,11 @@ body {
 }
 
 .animate_combat_blue {
-    animation: combat_blue 1s steps(6) infinite;
+    animation: combat_blue 1s steps(6) ;
 }
 
 .animate_combat_green {
-    animation: combat_green 1s steps(6) infinite;
+    animation: combat_green 1s steps(6) forwards;
 }
 
 
@@ -139,6 +160,16 @@ body {
 
 .animate_player2 {
     animation: move_Character2 3.7s linear forwards 0.2s;
+}
+
+/* move left  */
+
+.animate_player1_l {
+    animation: move_Character1_l 4s linear forwards;
+}
+
+.animate_player2_l {
+    animation: move_Character2_l 3.7s linear forwards 0.2s;
 }
 
 .animate_run_Character_sprite1 {
@@ -208,3 +239,23 @@ svg {
       transform: rotate(5deg);
     }
   }
+
+
+  .center_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #12070f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.center_button:hover {
+    background-color: wheat;
+}
