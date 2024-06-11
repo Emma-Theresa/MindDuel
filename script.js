@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const player1 = document.getElementById("player1");
     const player2 = document.getElementById("player2");
@@ -9,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskContainer = document.querySelector(".task_container"); // Added taskContainer selector
 
     // Initially hide player1, player2, and task container
-    player1.style.display = 'none';
-    player2.style.display = 'none';
+    player1.style.display = 'block';
+    player2.style.display = 'block';
     taskContainer.style.display = 'none';
 
     newButton.addEventListener("click", move_right);
@@ -59,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function move_left(){
 
-        // newButton.style.display = 'none';
-        // player1.style.display = 'block';
-        // player2.style.display = 'block';
+        newButton.style.display = 'none';
+        player1.style.display = 'block';
+        player2.style.display = 'block';
 
 
         player1.classList.add("animate_player1_l");
@@ -116,16 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
         sprite1.style.left = '-160px';
         sprite1.classList.add("animate_combat_green");
         
-        
-        setTimeout(() => {
-            move_left();
-        }, 1000);
+   
     }
 
 
     function blue_attack_l() {
         sprite2.classList.remove("animate_run_Character_sprite2");
-        player2.style.left = '820px';
+        player2.style.left = '200px';
         player2.style.top = '260px';
         sprite2.style.top = '-303px';
         sprite2.style.left = '-180px';
@@ -135,9 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sprite2.style.left = '-160px';
         sprite2.classList.add("animate_combat_blue");
 
-        setTimeout(() => {
-            move_right();
-        }, 1000);
+    
     }
 
 //Death animation
@@ -157,10 +150,23 @@ document.addEventListener("DOMContentLoaded", () => {
         player2.style.top = '260px';
         sprite2.style.top = '-200px';
         sprite2.style.left = '-160px';
-        sprite2.classList.add("animate_death_green_Character_sprite1");
+        sprite2.classList.add("animate_death_blue_Character_sprite2");
     }
 
 
-});
 
-sprite2.classList.add("animate_death_blue_Character_sprite2");
+    //Question fetching 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+});
