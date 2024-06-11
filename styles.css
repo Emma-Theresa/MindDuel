@@ -56,9 +56,9 @@ body {
     width: 65.8px;
     height: 100px;
 }
-    #player2 {
+    /* #player2 {
     overflow: hidden;
-}
+} */
 
 #player1 {
     
@@ -93,7 +93,7 @@ body {
         left: 100px;
     }
     to {
-        left: 860px; /* Move to the right */
+        left: 830px; /* Move to the right */
     }
 }
 
@@ -150,7 +150,7 @@ body {
 }
 
 .animate_combat_green {
-    animation: combat_green 1s steps(6) forwards;
+    animation: combat_green 1s steps(6) ;
 }
 
 
@@ -173,10 +173,30 @@ body {
 }
 
 .animate_run_Character_sprite1 {
+    top: -200px !important;
+    left: -90px !important;
     animation: walk_Character 1s steps(6) infinite;
 }
 
 .animate_run_Character_sprite2 {
+    top: -200px !important;
+    left: -90px !important;
+    animation: walk_Character 1s steps(6) infinite;
+    animation-delay: .3s;
+}
+
+
+
+.animate_run_Character_sprite1_l {
+    top: -300px !important;
+    left: -90px !important;
+    animation: walk_Character 1s steps(6) infinite;
+
+}
+
+.animate_run_Character_sprite2_l {
+    top: -300px !important;
+    left: -90px !important;
     animation: walk_Character 1s steps(6) infinite;
     animation-delay: .3s;
 }

@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
     taskContainer.style.display = 'none';
 
     newButton.addEventListener("click", move_right);
-    // taskContainer.addEventListener("click", green_attack_r);
-    taskContainer.addEventListener("click", move_left);
+    // taskContainer.addEventListener("click", move_left);
+    taskContainer.addEventListener("click", green_attack_r);
 
     function move_right() {
         // Show player1 and player2
@@ -107,37 +107,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-function left_move(){
-    player1.classList.add("animate_player1_l");
-    player2.classList.add("animate_player2_l");
-    sprite1.classList.add("animate_run_Character_sprite1");
-    sprite2.classList.add("animate_run_Character_sprite2");
+    function move_left(){
 
-    player1.addEventListener("animationend", onPlayer1AnimationLeftEnd);
-    player2.addEventListener("animationend", onPlayer2AnimationLeftEnd);
-}
+        // newButton.style.display = 'none';
+        // player1.style.display = 'block';
+        // player2.style.display = 'block';
 
-function onPlayer1AnimationLeftEnd() {
-    sprite1.classList.remove("animate_run_Character_sprite1");
-    player1.style.left = '100px';
-    player1.style.top = '360px';
-    sprite1.style.top = '-200px';
-    sprite1.style.left = '-160px';
-    taskContainer.style.display = 'block';
 
-    player1.removeEventListener("animationend", onPlayer1AnimationEnd);
-    
-}
+        player1.classList.add("animate_player1_l");
+        player2.classList.add("animate_player2_l");
+        sprite1.classList.add("animate_run_Character_sprite1_l");
+        sprite2.classList.add("animate_run_Character_sprite2_l");
 
-function onPlayer2AnimationLeftEnd() {
-    sprite2.classList.remove("animate_run_Character_sprite2");
-    player2.style.left = '200px';
-    player2.style.top = '260px';
-    sprite2.style.top = '-303px';
-    sprite2.style.left = '-180px';
+        player1.addEventListener("animationend", onPlayer1AnimationLeftEnd);
+        player2.addEventListener("animationend", onPlayer2AnimationLeftEnd);
+    }
 
-    player2.removeEventListener("animationend", onPlayer2AnimationEnd);
-}
+    function onPlayer1AnimationLeftEnd() {
+        sprite1.classList.remove("animate_run_Character_sprite1_l");
+        player1.style.left = '100px';
+        player1.style.top = '360px';
+        sprite1.style.top = '-200px';
+        sprite1.style.left = '-160px';
+        taskContainer.style.display = 'block';
+
+        player1.removeEventListener("animationend", onPlayer1AnimationEnd);
+        
+    }
+
+    function onPlayer2AnimationLeftEnd() {
+        sprite2.classList.remove("animate_run_Character_sprite2_l");
+        player2.style.left = '200px';
+        player2.style.top = '260px';
+        sprite2.style.top = '-303px';
+        sprite2.style.left = '-180px';
+
+        player2.removeEventListener("animationend", onPlayer2AnimationEnd);
+    }
 
 
 
@@ -160,7 +166,13 @@ function onPlayer2AnimationLeftEnd() {
         sprite1.style.top = '10px';
         sprite1.style.left = '-160px';
         sprite1.classList.add("animate_combat_green");
+        
+        
+        setTimeout(() => {
+            move_left();
+        }, 1000);
     }
+// move_left();
 
     function blue_attack_l() {
         sprite2.classList.remove("animate_run_Character_sprite2");
