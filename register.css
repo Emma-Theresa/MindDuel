@@ -1,0 +1,79 @@
+/* New styles for the form */
+/* Existing styles */
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48, #753D42);
+}
+
+/* Existing styles remain unchanged */
+
+.container {
+    position: relative; /* Establishes a new positioning context for absolutely positioned children */
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grave {
+    position: absolute; /* Positioning the background image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area without stretching */
+    z-index: -1; /* Places the image behind the form */
+}
+
+#userDataForm {
+
+    max-width: 400px; /* Limit the width of the form */
+    margin: auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding around the form */
+    border-radius: 5px;
+    position: absolute; 
+    width:80%;
+    top: 50%; /* Centers the form vertically */
+    left: 50%; /* Centers the form horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the form's position so it's centered perfectly */
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.001); /* Subtle shadow for depth */
+    border-radius: 8px; 
+    color: white;
+     /* Rounded corners for the form */
+}
+
+#userDataForm label {
+    display: block; /* Each label takes up the full width */
+    margin-bottom: 5px; /* Space between labels and inputs */
+    font-weight: bold; /* Make labels bold */
+}
+
+#userDataForm input[type="text"],
+#userDataForm input[type="email"] {
+    width: 90%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below each input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 3px; /* Slightly rounded corners */
+}
+
+#userDataForm input[type="submit"] {
+    background-color: #8B3D48; /* Dark red background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 3px; /* Rounded corners */
+    width: 95%; /* Full width button */
+    margin-top: 10px; /* Space above the submit button */
+}
+
+#userDataForm input[type="submit"]:hover {
+    background-color: #753D42; /* Darker shade on hover */
+}
