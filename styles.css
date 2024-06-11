@@ -1,0 +1,316 @@
+:root {
+    --pixel-size: 6;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48, #753D42);
+}
+
+.pixelart {
+    image-rendering: pixelated;
+}
+
+.container {
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.task_container{
+    position: absolute;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    min-width: 86%;
+    max-width: 700px;
+    min-height: 50%;
+    margin-top: 3%;
+    margin-left: 7%;
+    /* background-color: #901639; */
+    background-image: linear-gradient(225deg, #901639 2%, #740b29 41%, #901639 88%);
+
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.task_container:hover {
+    transform: scale(1.05); /* Add this line for scaling effect on hover */
+}
+
+.grave {
+    object-fit: fill;
+    margin-top: 155px;
+    opacity: .8;
+}
+
+#player1, #player2 {
+    position: relative;
+    overflow: hidden;
+    width: 65.8px;
+    height: 100px;
+}
+    #player2 {
+    overflow: hidden;
+}
+
+#player1 {
+    
+    left: 100px;
+    top: 360px;
+}
+
+#player2 {
+   
+    left: 200px;
+    top: 260px;
+}
+
+#Character_sprite1, #Character_sprite2 {
+    position: absolute;
+    height: 510px;
+    top: -200px;
+    left: -90px;
+}
+
+@keyframes walk_Character {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+@keyframes move_Character1 {
+    from {
+        left: 100px;
+    }
+    to {
+        left: 860px; /* Move to the right */
+    }
+}
+
+@keyframes move_Character2 {
+    from {
+        left: 200px;
+    }
+    to {
+        left: 900px; /* Move to the right */
+    }
+}
+
+/* move left  */
+
+@keyframes move_Character1_l {
+    from {
+        left: 860px;
+    }
+    to {
+        left: 100px;  /* Move to the right */
+    }
+}
+
+@keyframes move_Character2_l {
+    from {
+        
+        left: 900px;
+    }
+    to {
+        left: 200px; /* Move to the right */
+    }
+}
+
+@keyframes combat_green {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-550px, 0, 0);
+    }
+}
+
+@keyframes combat_blue {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-550px, 0, 0);
+    }
+}
+
+.animate_combat_blue {
+    animation: combat_blue 1s steps(6) ;
+}
+
+.animate_combat_green {
+    animation: combat_green 1s steps(6) forwards;
+}
+
+
+.animate_player1 {
+    animation: move_Character1 4s linear forwards;
+}
+
+.animate_player2 {
+    animation: move_Character2 3.7s linear forwards 0.2s;
+}
+
+/* move left  */
+
+.animate_player1_l {
+    animation: move_Character1_l 4s linear forwards;
+}
+
+.animate_player2_l {
+    animation: move_Character2_l 3.7s linear forwards 0.2s;
+}
+
+.animate_run_Character_sprite1 {
+    animation: walk_Character 1s steps(6) infinite;
+}
+
+.animate_run_Character_sprite2 {
+    animation: walk_Character 1s steps(6) infinite;
+    animation-delay: .3s;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* button  */
+
+svg {
+    position: fixed;
+    top: 40vh;
+    left: 50vw;
+    max-width: 300px;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 2;
+    filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+    /* background-color: black; */
+  }
+  svg path {
+    text-align: center;
+    fill: #12070f;
+    cursor: pointer;
+    -webkit-animation: blob 2s infinite forwards;
+            animation: blob 2s infinite forwards;
+    transform-origin: 50% 50%;
+  }
+  svg path:hover {
+    fill: wheat;
+  }
+  svg text {
+    font-size: 58px;
+  }
+  @-webkit-keyframes blob {
+    25% {
+      d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+      transform: rotate(-5deg);
+    }
+    50% {
+      d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+      d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+      transform: rotate(5deg);
+    }
+  }
+  @keyframes blob {
+    25% {
+      d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+      transform: rotate(-5deg);
+    }
+    50% {
+      d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+      d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+      transform: rotate(5deg);
+    }
+  }
+
+
+  .center_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #12070f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.center_button:hover {
+    background-color: wheat;
+}
+
+  /* pop up quiz style*/
+  .containerQuestion{
+    left: 200px;
+     bottom: 300px;
+     position: absolute;
+     background-color: transparent;
+     color:black;
+     width:500px;
+     height: 100px;
+     text-align: center;
+     border-radius: 12px;
+  }
+  #question{
+     margin-top: 20px;
+  }
+  
+
+  /* health bar */
+  .health-bars {
+    display: flex;
+    bottom: 450px;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    width: 600px; /* Adjusted to fit the two health bars side by side */
+}
+
+.health-bar {
+    height: 30px;
+    width: 48%; /* Use percentage to fit both bars inside the container */
+    border: 2px solid #000;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.health-bar-inner {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right, red,yellow,green);
+    
+    
+}
+
+.player-health-bar .health-bar-inner {
+    background-color: #0f0;
+}
+
+.enemy-health-bar .health-bar-inner {
+    background-color: #f00;
+}
+
