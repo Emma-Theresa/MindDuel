@@ -35,8 +35,6 @@ body {
     margin-left: 7%;
     /* background-color: #901639; */
     background-image: linear-gradient(225deg, #901639 2%, #740b29 41%, #901639 88%);
-
-    
     transition: transform 0.3s ease-in-out;
 }
 
@@ -51,6 +49,7 @@ body {
 }
 
 #player1, #player2 {
+
     position: relative;
     overflow: hidden;
     width: 65.8px;
@@ -61,14 +60,11 @@ body {
 } */
 
 #player1 {
-    
     left: 100px;
     top: 360px;
 }
 
 #player2 {
-
-   
     left: 200px;
     top: 260px;
 }
