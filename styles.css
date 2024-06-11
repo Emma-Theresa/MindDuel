@@ -56,7 +56,7 @@ body {
     width: 65.8px;
     height: 100px;
 }
-    /* #player2 {
+    /* #player1 {
     overflow: hidden;
 } */
 
@@ -67,6 +67,7 @@ body {
 }
 
 #player2 {
+
    
     left: 200px;
     top: 260px;
@@ -93,7 +94,7 @@ body {
         left: 100px;
     }
     to {
-        left: 830px; /* Move to the right */
+        left: 840px; /* Move to the right */
     }
 }
 
@@ -142,6 +143,24 @@ body {
     }
     to {
         transform: translate3d(-550px, 0, 0);
+    }
+}
+
+@keyframes death_Animation_green {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+@keyframes death_Animation_blue {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
     }
 }
 
@@ -199,6 +218,18 @@ body {
     left: -90px !important;
     animation: walk_Character 1s steps(6) infinite;
     animation-delay: .3s;
+}
+
+.animate_death_green_Character_sprite1 {
+    animation: death_Animation_green 1s steps(6) forwards;
+    top: -410px !important;
+    left: -90px !important;
+}
+
+.animate_death_blue_Character_sprite2 {
+    animation: death_Animation_blue 1s steps(6) forwards;
+    top: -410px !important;
+    left: -90px !important;
 }
 
 .hidden {
