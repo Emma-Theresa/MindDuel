@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48,#753D42);
+}
+
+.container {
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grave {
+    object-fit: fill;
+    margin-top: 155px;
+    opacity: .8;
+}
+
+/* Hide scrollbar for all elements */
+* {
+    scrollbar-width: none; 
+}
+
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.container #feedbackList {
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
+    max-height: 500px; 
+}
+
+
+.container #feedbackList {
+    -ms-overflow-style: none; 
+}
+
+
+.container #feedbackList::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+
+
+.reviewContainer {
+    position: relative;
+    color: white;
+    bottom: 500px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-item {
+    background-color: #8B3D48;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 500px;
+    margin-left: 250px;
+}
+
+.feedback-item h3 {
+    margin-top: 0;
+}
+
+.feedback-item p {
+    margin: 5px 0;
+}

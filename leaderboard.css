@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48,#753D42);
+}
+
+.container {
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grave {
+    object-fit: fill;
+    margin-top: 155px;
+    opacity: .8;
+}
+.leaderboard{
+    position: relative;
+    bottom: 400px;
+    color: white;
+}
+h1{
+    position: relative;
+   bottom: 500px;
+   color: white;
+}
