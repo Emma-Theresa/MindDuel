@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindDuel</title>
+    <link rel="stylesheet" href="/MindDuel/game.css" />
+  </head>
+  <body>
+    <div class="container">
+                                                                <div class="health-bars">
+                                                                  
+                                                                  <div class="health-bar player-health-bar">
+                                                                    
+                                                                    <div class="health-bar-inner" id="playerHealthInner">
+
+                                                                    </div>
+                                                                  
+                                                                  </div>
+                                              <div class="health-bar enemy-health-bar">
+                                                <div class="health-bar-inner1" id="enemyHealthInner">
+
+                                                </div>
+                                              </div>
+      </div>
+      <div class="task_container">
+        <div class="containerQuestion" id="question-container">
+          <div id="question"></div>
+          <div id="choices"></div>
+          <div id="result"></div>
+        </div>
+      </div>
+      <div id="player_G">
+        <img id="Character_sprite_G" src="/MindDuel/assets/image/green_p.png" alt="wr" />
+      </div>
+      <div id="player_B">
+        <img id="Character_sprite_B" src="/MindDuel/assets/image/blue-p.png" alt="2" />
+      </div>
+      <!-- <button id="new_button" class="center_button" onclick="">
+        New Button
+      </button> -->
+      <div id="start_button" class="start_animation">
+        <svg viewBox="45 60 400 320" xmlns="http://www.w3.org/2000/svg" onclick="">
+            <path id="button_bg" fill="#fff" d="M 90 210 C 90 180 90 150 90 150 C 150 150 180 150 180 150 C 180 150 300 150 300 150 C 300 150 330 150 390 150 C 390 150 390 180 390 210 C 390 240 390 270 390 270 C 330 270 300 270 300 270 C 300 270 180 270 180 270 C 180 270 150 270 90 270 C 90 270 90 240 90 210" mask="url(#knockout-text)">
+            </path>
+            <mask id="knockout-text">
+                <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+                <text x="147" y="227" fill="#000">START</text>
+            </mask>
+        </svg>
+    </div >
+    </div>
+    <div id="game-over-screen" style="display: none;">
+      <div class="game-over-screen-content" id="game-over-screen-content-id">
+        <h1 id="winner"></h1>
+        <button id="restart-button">FEEDBACK</button>
+      </div>
+    </div>
+
+    <script src="/MindDuel/game.js"></script>
+  </body>
+</html>
