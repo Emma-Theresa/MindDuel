@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindDuel</title>
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Background Image Reference -->
+      <img class="grave" src="./assets/image/Selected photo.png" alt="" />
+
+      <!-- Submit User Data Form -->
+      <div class="_playerlogin">
+        <div class="_formcontainer">
+          <div class="_playerslogin">
+            <p style="font-size: 2rem;">Player 1 Login</p>
+            <form id="player1Form" class="userDataForm">
+              <label for="username">Username:</label><br />
+              <input type="text" id="player1Username" name="username" /><br />
+              <label for="email">Email:</label><br />
+              <input type="email" id="player1Email" name="email" /><br />
+              <div class="_buttonset">
+                <input type="submit" value="Login" id="player2Submit" />
+                <input type="button" value="Reset" onclick="reset()" />
+              </div>
+            </form>
+            <p id="player1NameDisplay"></p>
+            <a id="newusersignup" style="color:whitesmoke;display: none;" href="./register.html"  >New User ? Sign up </a>
+            <!-- Placeholder for Player 1's name -->
+          </div>
+          <div class="_playerslogin">
+            <p  style="font-size: 2rem;">Player 2 Login</p>
+            <form id="player2Form" class="userDataForm">
+              <label for="username">Username:</label><br />
+              <input type="text" id="player2Username" name="username" /><br />
+              <label for="email">Email:</label><br />
+              <input type="email" id="player2Email" name="email" /><br />
+              <div class="_buttonset">
+              <input type="submit" value="Login" id="player2Submit" />
+              <input type="button" value="Reset" onclick="reset()" />
+              </div>
+            </form>
+            <p id="player2NameDisplay"></p>
+            <a id="newusersignup" style="color:whitesmoke;display: none;" href="./register.html" >New User ? Sign up </a>
+            <!-- Placeholder for Player 2's name -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>

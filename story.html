@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindDuel</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </head>
+  <body>
+    <div class="container">
+      <img class="grave" src="./assets/image/Selected photo.png" alt="" />
+      <div class="player1">
+        <div class="images1">
+          <img class="left_1" src="./assets/image/skl1.png" alt="" />
+          <img class="left_2" src="./assets/image/skl2.png" alt="" />
+        </div>
+        <div class="story-div">
+          <img class="story-sheet" src="./assets/image/background.png" alt="" />
+          <p id="typed" class="story"></p>
+          <a id="skip-link" href=""><img class="skip" src="./assets/image/skip.png" alt=""
+          /></a>
+        </div>
+
+        <h3 id="ins-head">Instructions</h3>
+        <div id="guide" class="instruction">
+          <p id="instructions">
+            1. Player faces combat situation in game. <br />
+            2. Must answer quiz question correctly to proceed. <br />
+            3. Quiz question displayed at end of screen. <br />
+            4. Multiple-choice answers provided. <br />
+            5. Correct answer allows Attack. <br />
+            6. Incorrect answer leads to fail. <br />
+          </p>
+          <a id="game" href="login.html"><img class="skip1" src="./assets/image/skip.png" alt=""></a>
+          <a id="soundon" href=""><img src="./assets/image/soundon.png" alt="" /></a>
+          <a id="soundoff" href=""><img src="./assets/image/sounoff.png" alt="" /></a>
+          <a id="feedback" href="./review.html"><img src="./assets/image/feedback.png" alt=""></a>
+          <a id="leaderboard" href="./leaderboard.html"><img src="./assets/image/leaderboard.png" alt=""></a>
+        </div>
+
+        <div id="conversation" class="dialog">
+          <img id="dialog_2" class="dialog_1" src="./images/d1.png" alt="" />
+          <img class="dialog_1" src="./assets/image/d2.png" alt="" />
+          <img id="dialog_2" src="./assets/image/d3.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d4.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d5.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d6.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d7.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d8.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d9" alt="" class="dialog_1" />
+          <img src="./assets/image/d10" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d11.png.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d12.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d13.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d14.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d15.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d16.png" alt="" class="dialog_1" />
+          <img id="dialog_2" src="./assets/image/d17.png" alt="" class="dialog_1" />
+          <img src="./assets/image/d18.png" alt="" class="dialog_1" />
+        </div>
+        <div class="player2">
+          <img class="right_1" src="./assets/image/skr1.png" alt="" />
+          <img class="right_2" src="./assets/image/skr2.png" alt="" />
+        </div>
+        <audio id="audioPlayer">
+          <source src="./assets/audio/narration.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio id="gamePlayer">
+          <source src="./assets/audio/game audio.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

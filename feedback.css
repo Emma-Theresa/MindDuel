@@ -1,0 +1,141 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48,#753D42);
+}
+
+.container{
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grave{
+    object-fit: fill;
+    margin-top: 155px;
+    opacity: .8;
+}
+
+
+
+.feedbackContainer{
+
+    width: 22rem;
+    background-color: #781E34;
+    border-radius: .5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .3);
+    overflow: hidden;
+    position: relative;
+    bottom:470px;
+    left: 300px;
+
+}
+
+.wrapper{
+    margin: 2rem 0;
+}
+
+.text{
+    margin-bottom: .5rem;
+    font-size: 1em;
+    color:white;
+    text-align: center;
+}
+
+.emoji{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+ 
+}
+.emoji > div:not(:first-child){
+    margin-left: 1rem;
+}
+
+
+.emoji > div{
+    cursor: pointer;
+    transition: transform .2s ease-in;
+}
+
+.emoji > div:hover{
+    transform: scale(1.4);
+}
+
+.textarea{
+    width: 100%;
+    display: block;
+    background-color:#440416;
+    color:#eee;
+    border:none;
+    resize: none;
+    border: none;
+    outline: none;
+    height: 0;
+    opacity: 0;
+    transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.textarea--active{
+    padding: 1rem;
+    opacity: 1;
+    height: 6rem;
+}
+.input{
+    width: 100%;
+    display: block;
+    background-color: #440416;
+    color:#eee;
+    border:none;
+    resize: none;
+    border: none;
+    outline: none;
+    border-bottom:1px solid black;
+    height:10px;
+    opacity: 0;
+    transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.input--active{
+    padding: 1rem;
+    opacity: 1;
+    height: 6rem;
+}
+
+.btn{
+    text-decoration: none;
+    color:#eee;
+    padding: .4rem 1rem;
+    border-radius: 4px;
+    background-color: #710624;
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    display: none;
+}
+
+.btn--active{
+    display: inline-block;
+}
+::placeholder{
+    color: white;
+}
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+

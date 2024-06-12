@@ -1,0 +1,129 @@
+/* Existing styles */
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48, #753D42);
+}
+
+/* Existing styles remain unchanged */
+
+.container {
+    position: relative; /* Establishes a new positioning context for absolutely positioned children */
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grave {
+    position: absolute; /* Positioning the background image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area without stretching */
+    z-index: 1; /* Places the image behind the form */
+}
+
+._playerlogin{
+    display: flex;
+    flex-direction: column;
+    position: absolute; 
+    width:80%;
+    top: 10%; 
+    left: 12%;
+    max-width: 1000px;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.001); /* Subtle shadow for depth */
+    border-radius: 8px; 
+    justify-content: space-between;
+    text-align: center;
+    color:white;
+
+}
+._formcontainer{
+    display: flex;
+    flex-direction: row;
+}
+._playerslogin{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    text-align: center;
+
+}
+
+.userDataForm {
+    width: 90%;
+    max-width: 800px; /* Limit the width of the form */
+    padding: 20px; /* Add some padding around the form */
+    border-radius: 8px; 
+}
+
+/* Other styles remain unchanged */
+
+
+.userDataForm label {
+    display: block; /* Each label takes up the full width */
+    margin-bottom: 5px; /* Space between labels and inputs */
+    font-weight: bold; /* Make labels bold */
+}
+
+.userDataForm input[type="text"],
+.userDataForm input[type="email"] {
+    width: 90%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below each input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 3px; /* Slightly rounded corners */
+}
+
+.userDataForm input[type="submit"] ,
+.userDataForm input[type="button"]
+{
+    background-color: #8B3D48; /* Dark red background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: none; /* No border */
+    border-radius: 3px; /* Rounded corners */
+    width:30%;
+    padding: 10px;
+    margin-top: 10px; /* Space above the submit button */
+}
+
+.userDataForm input[type="submit"]:hover {
+    background-color: #753D42; /* Darker shade on hover */
+}
+._buttonset{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#player1NameDisplay , #player2NameDisplay{
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    font-size: 3rem;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
