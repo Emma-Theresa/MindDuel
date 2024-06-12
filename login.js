@@ -21,42 +21,73 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const forms = document.querySelectorAll("#player1Form, #player2Form");
+  let player1login =false;
+  let player2login =false;
+  const player1Form = document.getElementById("player1Form");
+  const player2Form = document.getElementById("player2Form");
+  let player1Username = "", player2Username = "";
 
-  forms.forEach((form) => {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the default form submission behavior
-
-      const usernameField = this.querySelector('input[name="username"]');
-      const emailField = this.querySelector('input[name="email"]');
-      const nameDisplay = this.nextElementSibling;
-      const newUser = document.querySelector('#newusersignup');
-
-      // Simple validation (you can expand this based on your needs)
-      if (!usernameField.value || !emailField.value) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      get(ref(db, "users/"+usernameField.value))
-        .then((snapshot) => {
-          if (snapshot.exists()) {
-            const storedData = snapshot.val();
-            console.log(storedData);
-            this.style.display = "none";
-            nameDisplay.textContent = "Welcome, " + usernameField.value + "!";
+  // Function to handle form submission for both players
+  const handleSubmit = (e, playerNumber) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+  
+    const form = e.target; // 'e.target' gives us the form that was submitted
+    const usernameField = form.querySelector('input[name="username"]');
+    const emailField = form.querySelector('input[name="email"]');
+  
+    const nameDisplay = playerNumber === 1? document.getElementById("player1NameDisplay") : document.getElementById("player2NameDisplay");
+  
+    const newUser = document.querySelector('#newusersignup');
+  
+    if (!usernameField.value ||!emailField.value) {
+      alert("Please fill in all fields.");
+      return;
+    }
+  
+    get(ref(db, "users/" + usernameField.value))
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+          const storedData = snapshot.val();
+          console.log(storedData);
+          form.style.display = "none"; // Hide the form after successful login
+          nameDisplay.textContent = "Welcome, " + usernameField.value + "!";
+  
+          if (playerNumber === 1) {
+            player1Username = usernameField.value;
+            localStorage.setItem('player1Username', player1Username);
+            nameDisplay.textContent = `Welcome, ${usernameField.value}`;
+            player1login = true;
           } else {
-            this.style.display ="none";
-            nameDisplay.textContent = "No user found with that username.";
-            newUser.style.display = "block"; // Show the signup link
+            player2Username = usernameField.value;
+            localStorage.setItem('player2Username', player2Username);
+            nameDisplay.textContent = `Welcome, ${usernameField.value}`;
+            localStorage.setItem('player2LoggedIn', 'true'); 
+            player2login=true;
           }
-        })
-        .catch((error) => {
-          console.error("Error fetching user data:", error);
-          alert("An error occurred. Please try again.");
-        });
-    });
-  });
+          if (player1login && player2login) {
+            console.log("Both players have logged in!");
+            document.getElementById("startGameButton").disabled = false; // Enable the "Start Game" button
+        }
+  
+        } else {
+          form.style.display = "none"; // Hide the form if no user is found
+          nameDisplay.textContent = "No user found with that username.";
+          newUser.style.display = "block"; // Show the signup link
+        }
+      })
+    .catch((error) => {
+        console.error("Error fetching user data:", error);
+        alert("An error occurred. Please try again.");
+      });
+  }  
+
+  player1Form.addEventListener("submit", (e) => handleSubmit(e, 1));
+  player2Form.addEventListener("submit", (e) => handleSubmit(e, 2));
+  // Inside handleSubmit, after setting player login flags
+ 
+
+
+
 });
 
 function reset(){
@@ -65,3 +96,6 @@ function reset(){
     usernameField.value='';
     emailField.value='';
 }
+
+
+
