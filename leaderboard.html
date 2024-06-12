@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <link rel="stylesheet" href="./Leaderboard.css" />
-  </head>
-  <body>
-    <div class="LeaderBoardBackground">
-      <div class="LeaderBoardTitle">
-        <p class="LeaderBoardp1">Leaderboard</p>
-      </div>
-      <div class="LeaderBoardContent">
-        <ol class="LeaderBoardList" id="leaderboardList">
-          <!-- Leaderboard entries will be populated here -->
-        </ol>
-      </div>
-    
-    </div>
- 
+    <link rel="stylesheet" href="./leaderboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Assuming this is meant to be a background image for the entire page -->
+        <img class="grave" src="./assets/image/Selected%20photo.png" alt="Background">
 
-    <script src="Leaderboard.js"></script>
-  </body>
+        <div class="LeaderBoardBackground">
+            <div class="LeaderBoardTitle">
+                <p class="LeaderBoardp1">Leaderboard</p>
+            </div>
+            <div class="LeaderBoardContent">
+                <div class="LeaderBoardScroll">
+                    <ol class="LeaderBoardList" id="leaderboardList">
+                        <!-- Leaderboard entries will be populated here -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./leaderboard.js"></script>
+</body>
 </html>
- 

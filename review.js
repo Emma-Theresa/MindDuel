@@ -107,8 +107,6 @@ function handleFeedbacks(error, feedbackData) {
         console.error("Error fetching feedbacks:", error);
     } else {
         console.log("Feedbacks fetched successfully!");
-
-       
         const feedbackList = document.getElementById('feedbackList');
         
       

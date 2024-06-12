@@ -21,13 +21,73 @@ body {
     margin-top: 155px;
     opacity: .8;
 }
-.leaderboard{
-    position: relative;
-    bottom: 400px;
-    color: white;
+.LeaderBoardBackground{
+   position: absolute;
+   top:20%;
+   left:10%;
+   width:80%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
-h1{
-    position: relative;
-   bottom: 500px;
-   color: white;
+/* Title Styles */
+.LeaderBoardTitle {
+    text-align: center;
+    padding: 20px 0;
 }
+
+.LeaderBoardTitle p {
+    margin: 0;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+/* Leaderboard Content Styles */
+.LeaderBoardContent {
+    color:white;
+    padding: 20px;
+    width:50%;
+}
+
+.LeaderBoardScroll {
+    max-height: 300px; /* Adjust the maximum height as needed */
+    overflow-y: scroll;
+}
+.LeaderBoardScroll::-webkit-scrollbar {
+    display: none;
+}
+.LeaderBoardList {
+    list-style-type: none;
+    padding: 20px; /* Increased padding for better spacing around items */
+    margin: 0 auto; /* Centering the list */
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Optional: Limit the width of the list */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+.LeaderBoardList li {
+    text-align: center;
+    padding: 15px 0; /* Slightly increased vertical padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    font-size: 1.2rem;
+}
+
+.LeaderBoardList li:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.LeaderBoardList li:last-child {
+    border-bottom: none;
+}
+
+.LeaderBoardList li span {
+    font-weight: bold;
+    color: #fff;
+    display: block; /* Make span take full width */
+    margin-top: 5px; /* Space above the span text */
+}
+
