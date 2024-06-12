@@ -1,0 +1,542 @@
+:root {
+    --pixel-size: 6;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8B3D48, #753D42);
+}
+
+.pixelart {
+    image-rendering: pixelated;
+}
+
+.container {
+    background-image: url('./assets/image/Reference-Image.png');
+    background-repeat: no-repeat;
+    margin-top: 7vh;
+    background-size: cover;
+    width: 1000px;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+.task_container:hover {
+    transform: scale(1.05); /* Add this line for scaling effect on hover */
+}
+
+.grave {
+    object-fit: fill;
+    margin-top: 155px;
+    opacity: .8;
+}
+
+
+
+
+
+
+
+#player_G{
+    /* background-color: aqua; */
+    position: relative;
+    overflow: hidden;
+    width: 65.8px;
+    height: 100px;
+    top: 360px
+   
+}
+
+
+#player_B {
+    /* background-color: aquamarine; */
+    position: relative;
+    overflow: hidden;
+    width: 65.8px;
+    height: 100px;
+    top: 260px;
+}
+
+
+
+#Character_sprite_G, #Character_sprite_B {
+  
+    position: absolute;
+    height: 510px;
+    /* top: 10px;
+    left: 10px; */
+}
+
+
+@keyframes player_G_moveRight {
+    from {
+        left: 100px;
+    }
+    to {
+        left: 800px; /* Move to the right */
+    }
+}
+
+@keyframes player_B_moveRight {
+    from {
+        left: 200px;
+    }
+    to {
+        left: 850px; /* Move to the right */
+    }
+}
+
+.player_G_move_right {
+    animation: player_G_moveRight 2s linear forwards ;
+    left: 100px;
+
+}
+
+.player_B_move_right {
+    animation: player_B_moveRight 2s linear forwards ;
+    left: 200px;
+    animation-delay: .1s;
+
+}
+ 
+/* run animation */
+
+@keyframes run_Character_l {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.right_run_G {
+    top: -200px;
+    left: -90px;
+animation: run_Character_l 1s steps(6) infinite;
+}
+
+.right_run_B {
+top: -200px ;
+left: -90px ;
+animation: run_Character_l 1s steps(6) infinite;
+animation-delay: .1s;
+}
+
+/* combact stance */
+
+.combact_pos_player_G_R{
+    left:800px ;
+}
+
+.combact_pos_player_B_R{
+    left: 850px;
+}
+
+.combact_pos_img_G_R{
+    top: 10px;
+    left: 0px;
+}
+
+.combact_pos_img_B_R{
+    top: -90px;
+    left: 0px;
+}
+
+
+
+
+/* move left  */
+
+@keyframes player_G_moveLeft {
+    from {
+        left: 800px;
+    }
+    to {
+        left: 100px; /* Move to the left*/
+    }
+}
+
+@keyframes player_B_moveLeft {
+    from {
+        left: 850px;
+    }
+    to {
+        left: 150px; /* Move to the left */
+    }
+}
+
+.player_G_move_left {
+    animation: player_G_moveLeft 2s linear forwards ;
+    left: 100px;
+
+}
+
+.player_B_move_left {
+    animation: player_B_moveLeft 2s linear forwards ;
+    left: 200px;
+    animation-delay: .1s;
+
+}
+ 
+/* run animation */
+
+@keyframes run_Character_r {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.left_run_G {
+    top: -300px;
+    left: -90px;
+animation: run_Character_r 1s steps(6) infinite;
+}
+
+.left_run_B {
+top: -300px ;
+left: -90px ;
+animation: run_Character_r 1s steps(6) infinite;
+animation-delay: .1s;
+}
+
+/* combact stance */
+
+.combact_pos_player_G_L{
+    left:100px ;
+}
+
+.combact_pos_player_B_L{
+    left: 150px;
+}
+
+.combact_pos_img_G_L{
+    top: 10px;
+    left: 0px;
+}
+
+.combact_pos_img_B_L{
+    top: -90px;
+    left: 0px;
+}
+
+
+
+/* combact green */
+
+
+@keyframes combact_G {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.combact_G {
+    top: 10px;
+    left: -90px;
+animation: combact_G 1s steps(6) ;
+}
+
+.combact_pos_player_G_attack_r{
+    left: 820px;
+}
+.combact_pos_player_B_attack_r{
+    left: 850px;
+}
+
+
+
+/* conbact blue  */
+
+@keyframes combact_B {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.combact_B {
+    top: -90px;
+    left: -90px;
+animation: combact_B 1s steps(6);
+}
+
+.combact_pos_player_G_attack_l{
+    left: 120px;
+}
+.combact_pos_player_B_attack_l{
+    left: 150px;
+}
+
+
+
+
+
+/* death green  */
+@keyframes death_G {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.death_G {
+    top: -410px;
+    left: -90px;
+animation: death_G 1s steps(6);
+}
+
+.death_pos_player_G_r{
+    left: 120px;
+}
+.death_pos_player_B_r{
+    left: 150px;
+}
+
+
+@keyframes death_B {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-515px, 0, 0);
+    }
+}
+
+.death_B {
+    top: -410px;
+    left: -90px;
+animation: death_B 1s steps(6);
+}
+
+.death_pos_player_G_l{
+    left: 820px;
+}
+.death_pos_player_B_l{
+    left: 850px;
+}
+
+/* button  */
+
+
+/* 
+  .center_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #12070f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.center_button:hover {
+    background-color: wheat;
+} */
+
+.health-bars {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 98%;
+    /* z-index: 5; */
+
+  }
+  
+  .health-bar {
+    width: 20%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  
+  .health-bar-inner {
+    height: 100%;
+    background-color: #1a45c5; /* Green color */
+    transition: width 0.3s ease-in-out;
+  }
+
+  .health-bar-inner1 {
+    height: 100%;
+    background-color: #4caf50; /* Green color */
+    transition: width 0.3s ease-in-out;
+  }
+  
+/* Game Over Screen */
+
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(175, 0, 0, 1);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #game-over-screen.show {
+    display: flex;
+  }
+  
+  #winner {
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 20px;
+    
+  }
+  
+  
+  .game-over-screen-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .task_container{
+    position: absolute;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    min-width: 86%;
+    max-width: 700px;
+    min-height: 50%;
+    margin-top: 3%;
+    margin-left: 7%;
+    /* background-color: #901639; */
+    background-image: linear-gradient(225deg, #901639 2%, #740b29 41%, #901639 88%);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+  .containerQuestion {
+    margin-left: 10%;
+
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+#question {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.choice-btn {
+    background-color: #440416;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+    background-color: #1c040c;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #28a745;
+}
+
+
+
+
+
+/* button  */
+ 
+svg {
+    position: fixed;
+    top: 40vh;
+    left: 50vw;
+    max-width: 300px;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 2;
+    filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+    /* background-color: black; */
+  }
+  svg path {
+    text-align: center;
+    fill: #12070f;
+    cursor: pointer;
+    -webkit-animation: blob 2s infinite forwards;
+            animation: blob 2s infinite forwards;
+    transform-origin: 50% 50%;
+  }
+  svg path:hover {
+    fill: #c2464c;
+  }
+  svg text {
+    font-size: 58px;
+  }
+  @-webkit-keyframes blob {
+    25% {
+      d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+      transform: rotate(-5deg);
+    }
+    50% {
+      d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+      d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+      transform: rotate(5deg);
+    }
+  }
+  @keyframes blob {
+    25% {
+      d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+      transform: rotate(-5deg);
+    }
+    50% {
+      d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+      d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+      transform: rotate(5deg);
+    }
+  }
+ 
